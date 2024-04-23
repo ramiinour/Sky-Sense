@@ -89,9 +89,9 @@ interface CurrentWeather {
     generationtime_ms: Float;
     hourly: Hourly;
     hourly_units: HourlyUnits;
-    latitude: Float;
-    longitude: Float;
-    timezone: String;
-    timezone_abbreviation: String;
-    utc_offset_seconds: Int;
+    latitude: number;
+    longitude: number;
+    timezone: string;
+    timezone_abbreviation: string;
+    utc_offset_seconds: number;
   }
