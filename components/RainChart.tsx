@@ -22,7 +22,7 @@ const RainChart = ({results}:Props) => {
 
 
   return (
-    <Card className="">
+    <Card>
         <Title className="text-bold text-xl">Chances of Rain</Title>
         <AreaChart
         className="mt-6"

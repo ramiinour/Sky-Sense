@@ -23,7 +23,7 @@ const TempChart = ({results}:Props) => {
 
 
   return (
-    <Card className="">
+    <Card>
         <Title className="text-bold text-xl">Temperature & UV Index</Title>
         <AreaChart
         className="mt-6"

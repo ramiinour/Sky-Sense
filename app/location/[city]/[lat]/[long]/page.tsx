@@ -6,6 +6,8 @@ import RainChart from "@/components/RainChart";
 import StatCard from "@/components/StatCard";
 import TempChart from "@/components/TempChart";
 import fetchWeatherQuery from "@/graphql/queries/fetchWeatherQueries";
+import cleanData from "@/lib/cleanData";
+import getBasePath from "@/lib/getBasePath";
 import {RiEarthFill} from "@remixicon/react";
 import { Divider } from "@tremor/react";
 
@@ -35,6 +37,20 @@ const WeatherPage = async ({params:{city,lat,long}}:Props) => {
     })
 
     const results:Root= data.myQuery
+    const dataToSend = cleanData(results,city)
+
+    // const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+    //     method:"POST",
+    //     headers:{
+    //         "Content-Type":"application/json",
+    //     },
+    //     body:JSON.stringify({
+    //         weatherData:dataToSend
+    //     })
+    // })
+
+    // const GPTdata = await res.json()
+    // const {content} = GPTdata
     // console.log(results);
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
@@ -56,7 +72,8 @@ const WeatherPage = async ({params:{city,lat,long}}:Props) => {
                 </div>
                 
                 <div className="m-2 mb-10">
-                 <CalloutCard  message="This is where the summary will be"/>
+                {/* <CalloutCard  message={"Weather input"}/> */}
+                 {/* <CalloutCard  message={content}/> */}
                 </div>
 
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
@@ -88,7 +105,7 @@ const WeatherPage = async ({params:{city,lat,long}}:Props) => {
                     <div className="flex space-x-3">
                         <StatCard
                         title="Wind Speed"
-                        metric={`${results.current_weather.windspeed.toFixed(1)}m/s`}
+                        metric={`${results.current_weather.windspeed.toFixed(1)}k/h`}
                         color="cyan"
                         />
                         <StatCard
@@ -102,7 +119,7 @@ const WeatherPage = async ({params:{city,lat,long}}:Props) => {
             </div>
             
             <Divider className="mb-5"/>
-            <div className="space-y-3">
+            <div className="space-y-3 mx-2">
               {/* Charts */}
               <TempChart results={results}/>
               <RainChart results={results}/>

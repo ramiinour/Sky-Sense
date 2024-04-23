@@ -22,7 +22,7 @@ const HumidityChart = ({results}:Props) => {
 
 
   return (
-    <Card className="">
+    <Card>
         <Title className="text-bold text-xl">Humidity Levels</Title>
         <AreaChart
         className="mt-6"

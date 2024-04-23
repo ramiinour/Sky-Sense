@@ -17,7 +17,7 @@ const InformationPanel = ({city,lat,long,results}:Props) => {
 
        <div className="pb-5">
         <h1 className="text-6xl font-bold">{decodeURI(city)}</h1>
-        <p className="text-xs text-gray-400">Long/Lat: {long}, {lat}</p>
+        <p className="text-xs text-gray-400 mt-2">Long/Lat: {long}, {lat}</p>
        </div>
 
        <CityPicker/>
