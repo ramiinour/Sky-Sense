@@ -1,4 +1,4 @@
-import { getClient } from "@/apollo-client"
+import { getClientt } from "@/apollo-client";
 import CalloutCard from "@/components/CalloutCard";
 import HumidityChart from "@/components/HumidityChart";
 import InformationPanel from "@/components/InformationPanel";
@@ -21,7 +21,7 @@ type Props ={
 
 
 const WeatherPage = async ({params:{city,lat,long}}:Props) => {
-    const client = getClient()
+    const client = getClientt()
     const dailyy = "weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,uv_index_max,uv_index_clear_sky_max"
     const hourlyy = "temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,snowfall,snow_depth,wind_gusts_10m,uv_index,uv_index_clear_sky"
     const {data} = await client.query({
