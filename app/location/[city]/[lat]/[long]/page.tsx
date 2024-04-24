@@ -118,7 +118,8 @@ const WeatherPage = async ({params:{city,lat,long}}:Props) => {
                 </div>
             </div>
             
-            <Divider className="mb-5"/>
+            {/* <Divider className=""/> */}
+            <hr className="mb-5"/>
             <div className="space-y-3 mx-2">
               {/* Charts */}
               <TempChart results={results}/>

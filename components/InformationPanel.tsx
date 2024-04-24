@@ -21,7 +21,8 @@ const InformationPanel = ({city,lat,long,results}:Props) => {
        </div>
 
        <CityPicker/>
-       <Divider className="my-10"/>
+       {/* <Divider className="my-10"/> */}
+       <hr className="my-10"/>
 
        <div className="mt-5 flex items-center justify-between space-x-10 mb-5">
         <div>
@@ -48,7 +49,8 @@ const InformationPanel = ({city,lat,long,results}:Props) => {
         </p>
        </div>
 
-       <Divider className="mt-10 mb-5"/>
+       {/* <Divider className="mt-10 mb-5"/> */}
+       <hr className="mt-10 mb-5"/>
 
        <div className="flex items-center justify-between">
         <div>
